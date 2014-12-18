@@ -1,0 +1,11 @@
+MAS coffeeAgent {
+
+	infrastructure: Centralised
+
+	agents:
+		transporter_agent;
+		coffeemachine_agent;
+
+	aslSourcePath:
+		"src/asl";
+}
