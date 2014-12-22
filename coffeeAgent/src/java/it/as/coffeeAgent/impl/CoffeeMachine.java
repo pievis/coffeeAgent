@@ -6,6 +6,8 @@ import it.as.coffeeAgent.interfaces.ICoffeeMachine;
 public class CoffeeMachine implements ICoffeeMachine {
 
 	private final long COFFEE_WAIT_TIME = 2500;
+	private final double COFFEE_PER_CUP = 1.0;
+	private final double WATER_PER_CUP = 1.5;
 	//
 	double waterLevel = 100.0;
 	double coffeeLevel = 100.0;
@@ -13,8 +15,14 @@ public class CoffeeMachine implements ICoffeeMachine {
 	
 	public ICoffeeCup makeCoffee() {
 		ICoffeeCup cc = new CoffeeCup();
-		coffeeLevel-= 10.0;
-		waterLevel-= 10.0;
+		
+		if(coffeeLevel < COFFEE_PER_CUP)
+			return null;
+		if(waterLevel < WATER_PER_CUP)
+			return null;
+		
+		coffeeLevel-= COFFEE_PER_CUP;
+		waterLevel-= WATER_PER_CUP;
 		try {
 			Thread.sleep(COFFEE_WAIT_TIME); //really this shouldn't be done, but it's a simulation so...
 		} catch (InterruptedException e) {

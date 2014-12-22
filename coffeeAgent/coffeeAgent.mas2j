@@ -1,10 +1,12 @@
 MAS coffeeAgent {
 
 	infrastructure: Centralised
+	
+	environment: env.CoffeeHouseEnv
 
 	agents:
-		transporter_agent;
-		coffeemachine_agent;
+		trans transporter_agent;
+		machine coffeemachine_agent;
 
 	aslSourcePath:
 		"src/asl";

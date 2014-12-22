@@ -9,4 +9,8 @@ public interface ITransporterRobot {
 
 	public double getBatteryLevel();
 	public void rechargeBattery(double level);
+	
+	public void takeCup(ICoffeeCup cup);
+	public ICoffeeCup disposeCup();
+	public boolean isCarryingCup();
 }
